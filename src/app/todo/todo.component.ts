@@ -37,4 +37,8 @@ export class TodoComponent {
     this.todoService.editTodo(this.todo.value, this.newTodoValue);
     this.isEdit = false;
   }
+
+  clickHandlerAddToFavorite() {
+    this.todo.favorite = !this.todo.favorite;
+  }
 }

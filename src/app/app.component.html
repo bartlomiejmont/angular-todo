@@ -1,7 +1,9 @@
-<div>
-  <app-add-todo></app-add-todo>
-  <app-todo
-    *ngFor="let todo of todoService.getTodos()"
-    [todo]="todo"
-  ></app-todo>
-</div>
+<main class="container">
+  <nav>
+    <a [routerLink]="'/'">Home</a>
+    <br />
+    <a [routerLink]="'/favorites'">Favorites</a>
+  </nav>
+  <button (click)="todoService.saveTodosToLocalStorage()">Save todos</button>
+  <router-outlet></router-outlet>
+</main>

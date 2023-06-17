@@ -4,10 +4,10 @@
     <p
       [ngStyle]="{ 'text-decoration': todo.done ? 'line-through' : 'none' }"
       (click)="clickHandlerEdit()"
-    >
-      {{ todo.value }}
-    </p>
+      [innerHTML]="todo.value | favorite : todo.favorite"
+    ></p>
     <button (click)="clickHandlerDelete()">X</button>
+    <button (click)="clickHandlerAddToFavorite()">*</button>
   </div>
   <div *ngIf="isEdit" class="todo">
     <input [(ngModel)]="newTodoValue" />

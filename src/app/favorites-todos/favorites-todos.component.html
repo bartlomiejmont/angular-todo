@@ -1,0 +1,8 @@
+<div>
+  <app-add-todo></app-add-todo>
+  <app-todo
+    *ngFor="let todo of todoService.getFavoriteTodos()"
+    [todo]="todo"
+  ></app-todo>
+  <img [src]="photo" />
+</div>

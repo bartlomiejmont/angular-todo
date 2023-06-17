@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { FavoritesTodosComponent } from './favorites-todos/favorites-todos.component';
 
-
+const routes: Routes = [
+  { path: '', component: TodoListComponent },
+  { path: 'favorites', component: FavoritesTodosComponent },
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
