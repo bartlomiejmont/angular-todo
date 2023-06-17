@@ -1,0 +1,16 @@
+<div>
+  <div *ngIf="!isEdit" class="todo">
+    <input type="checkbox" (change)="clickHandlerComplete($event)" />
+    <p
+      [ngStyle]="{ 'text-decoration': todo.done ? 'line-through' : 'none' }"
+      (click)="clickHandlerEdit()"
+    >
+      {{ todo.value }}
+    </p>
+    <button (click)="clickHandlerDelete()">X</button>
+  </div>
+  <div *ngIf="isEdit" class="todo">
+    <input [(ngModel)]="newTodoValue" />
+    <button (click)="clickHandlerSave()">save</button>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<input
+  type="text"
+  [(ngModel)]="newTodo"
+  [ngModelOptions]="{ standalone: true }"
+/>
+<button type="submit" (click)="clickHandlerAdd()">Add todo</button>
