@@ -12,6 +12,8 @@ import { FavoritesTodosComponent } from './favorites-todos/favorites-todos.compo
 import { HttpService } from './http.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FavoritePipe } from './favorite.pipe';
+import { AuthService } from './auth.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { FavoritePipe } from './favorite.pipe';
     FavoritePipe,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
-  providers: [TodoService, HttpService],
+  providers: [TodoService, HttpService, AuthService, CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -5,5 +5,8 @@
     <a [routerLink]="'/favorites'">Favorites</a>
   </nav>
   <button (click)="todoService.saveTodosToLocalStorage()">Save todos</button>
+  <button (click)="authService.clickHandleLoginLogout()">
+    {{ authService.validateToken() ? "Logout" : "Login" }}
+  </button>
   <router-outlet></router-outlet>
 </main>
